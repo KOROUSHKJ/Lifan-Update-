@@ -1914,11 +1914,11 @@ async def panel_page(request: Request):
 
 if __name__ == "__main__":
     uvicorn.run(
-        app, 
+        "main:app", 
         host="0.0.0.0", 
-        port=CONFIG["port"]
+        port=CONFIG["port"],
+        log_level="info"
     )
 
-   ssl_certfile="cert.pem", 
-        ssl_keyfile="key.pem"
+    ssl_keyfile="key.pem"
     )
