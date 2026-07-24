@@ -1919,6 +1919,3 @@ if __name__ == "__main__":
         port=CONFIG["port"],
         log_level="info"
     )
-
-    ssl_keyfile="key.pem"
-    )
