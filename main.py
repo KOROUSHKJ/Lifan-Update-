@@ -117,7 +117,7 @@ def get_domain() -> str:
     return os.environ.get("DOMAIN", "localhost")
 
 # ── Database Storage Helpers ──────────────────────────────────────────────────
-DB_FILE = "db.json"
+DB_FILE = os.environ.get("DB_PATH", "/data/db.json")
 
 def load_data():
     if os.path.exists(DB_FILE):
