@@ -23,7 +23,7 @@ logger = logging.getLogger("Luffy-Gateway")
 app = FastAPI(title="Luffy Panel", docs_url=None, redoc_url=None)
 
 CONFIG = {
-    "port": 20169,
+    "port": int(os.environ.get("PORT", 20169)),
     "secret": os.environ.get("SECRET_KEY", secrets.token_urlsafe(32)),
 }
 
@@ -114,7 +114,7 @@ async def shutdown():
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def get_domain() -> str:
-    return "karljohnson.kdns.fr"
+    return os.environ.get("DOMAIN", "localhost")
 
 # ── Database Storage Helpers ──────────────────────────────────────────────────
 DB_FILE = "db.json"
